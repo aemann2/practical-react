@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/layout/header';
+import Counter from './components/Counter';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       />
       <body>
         <p>This is body text</p>
+        {/* passing a num value to the Counter */}
+        <Counter initialCount={10} />
       </body>
     </div>
   );
