@@ -1,8 +1,15 @@
 import './App.css';
+import { useState } from 'react';
 import Header from './components/layout/header';
 import Counter from './components/Counter';
+import ImageSlider from './components/ImageSlider';
 
 function App() {
+  const [visible, setVisible] = useState(true);
+
+  // setting a conditional for button text...I could also just do this in the brackets of the button
+  const buttonText = visible ? 'hide' : 'show';
+
   return (
     <div className='App'>
       {/* passing "title" as a prop to Header...I don't have to wrap it in curly braces because it's a string */}
@@ -14,6 +21,9 @@ function App() {
         <p>This is body text</p>
         {/* passing a num value to the Counter */}
         <Counter initialCount={10} />
+        {/* conditional render: setting whether the slider is visible or not */}
+        <div>{visible ? <ImageSlider /> : null}</div>
+        <button onClick={() => setVisible(!visible)}>{buttonText}</button>
       </body>
     </div>
   );
