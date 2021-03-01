@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function ImageSlider() {
   // setting state for images and index using hooks
@@ -8,6 +8,7 @@ function ImageSlider() {
     'https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE',
     'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk',
   ];
+
   const [index, setIndex] = useState(0);
 
   // event handler for Onclick...notice that things are actually updated asychronously. the value doesn't get updated right away
@@ -17,6 +18,25 @@ function ImageSlider() {
     console.log(index);
   };
   console.log(index);
+
+  // lifecycle functions to log when the slider gets unmounted
+
+  useEffect(() => {
+    console.log('mounted');
+    return function cleanup() {
+      console.log('unmounted');
+    };
+  });
+
+  // the above useEffect hook replaces these class-based lifecycle components:
+
+  // function componentWillUnmount() {
+  //   console.log('unmounting...');
+  // }
+
+  // function componentDidMount() {
+  //   console.log('mounting...');
+  // }
 
   return (
     <div>
