@@ -3,8 +3,9 @@ import { useState } from 'react';
 import Header from './components/layout/header';
 import Counter from './components/Counter';
 import ImageSlider from './components/ImageSlider';
+import MyForm from './components/MyForm';
 
-function App() {
+function App(props) {
   const [visible, setVisible] = useState(true);
 
   // setting a conditional for button text...I could also just do this in the brackets of the button
@@ -24,6 +25,10 @@ function App() {
         {/* conditional render: setting whether the slider is visible or not */}
         <div>{visible ? <ImageSlider /> : null}</div>
         <button onClick={() => setVisible(!visible)}>{buttonText}</button>
+        <br />
+        <br />
+        <MyForm />
+        <p></p>
       </body>
     </div>
   );
