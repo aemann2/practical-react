@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Header from './components/layout/header';
 import Counter from './components/Counter';
 import ImageSlider from './components/ImageSlider';
-import MyForm from './components/MyForm';
+// import MyForm from './components/MyForm';
+import ValidationForm from './components/ValidationForm';
 
 function App(props) {
   const [visible, setVisible] = useState(true);
@@ -27,7 +28,7 @@ function App(props) {
         <button onClick={() => setVisible(!visible)}>{buttonText}</button>
         <br />
         <br />
-        <MyForm />
+        <ValidationForm />
         <p></p>
       </body>
     </div>
