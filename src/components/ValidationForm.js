@@ -38,6 +38,7 @@ function ValidationForm() {
     }
 
     if (nameError || emailError) {
+      // apparently, I have to use the state spread operator or else the state that's not listed here gets reset by setState. I think maybe the useEffect hook has a way around this, but I don't have time to dig into it
       setState({ ...state, emailError, nameError, passwordError });
       return false;
     }
@@ -48,7 +49,6 @@ function ValidationForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValid = validate();
-    console.log(isValid);
     if (isValid) {
       console.log(state.name, state.email, state.password);
       setState({ ...initialState });
