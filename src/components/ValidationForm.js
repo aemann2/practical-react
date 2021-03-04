@@ -23,7 +23,7 @@ function ValidationForm() {
   const validate = () => {
     let nameError = '';
     let emailError = '';
-    // let passwordError = '';
+    let passwordError = '';
 
     if (!state.name) {
       nameError = 'Please enter a name';
@@ -33,8 +33,12 @@ function ValidationForm() {
       emailError = 'invalid email';
     }
 
+    if (!state.password) {
+      nameError = 'Please enter a password';
+    }
+
     if (nameError || emailError) {
-      setState({ emailError, nameError });
+      setState({ ...state, emailError, nameError, passwordError });
       return false;
     }
 
