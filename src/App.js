@@ -5,6 +5,7 @@ import Counter from './components/Counter';
 import ImageSlider from './components/ImageSlider';
 // import MyForm from './components/MyForm';
 import ValidationForm from './components/ValidationForm';
+import FetchRandomUser from './components/FetchRandomUser';
 
 function App(props) {
   const [visible, setVisible] = useState(true);
@@ -20,6 +21,10 @@ function App(props) {
         time={new Date().toISOString().slice(0, 10)}
       />
       <body>
+        <FetchRandomUser />
+        <br />
+        <br />
+        <br />
         <p>This is body text</p>
         {/* passing a num value to the Counter */}
         <Counter initialCount={10} />
@@ -29,7 +34,6 @@ function App(props) {
         <br />
         <br />
         <ValidationForm />
-        <p></p>
       </body>
     </div>
   );
